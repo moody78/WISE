@@ -1,21 +1,18 @@
 //
-//  ViewController.h
-//  WISE
+//  TodayViewController.h
+//  PrayerTimesWidget
 //
-//  Created by Mohamed Rashwan on 04/07/2014.
+//  Created by Mohamed Rashwan on 05/10/2014.
 //  Copyright (c) 2014 Beamstart. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 #import "PrayerTimesGate.h"
-#import "Settings.h"
-#import "ActivitiesViewController.h"
-#import <QuartzCore/QuartzCore.h>
 
-@interface ViewController : UIViewController
+@interface TodayViewController : UIViewController
 
-@property (nonatomic, strong) UILabel *hijriTitle;
+@property (nonatomic, strong) UILabel *hijriDate;
 
 @property (nonatomic, strong) UILabel *azanTitle;
 @property (nonatomic, strong) UILabel *jamaaTitle;
@@ -41,18 +38,15 @@
 @property (nonatomic, strong) UILabel *maghribJamaa;
 @property (nonatomic, strong) UILabel *ishaJamaa;
 
-@property (nonatomic, strong) UILabel *prayersTimeTitle;
 @property (nonatomic, strong) UILabel *nextPrayerIndicator;
 
-@property (nonatomic, strong) UIView *lineView;
-@property (nonatomic, strong) UIView *lineViewBottom;
-@property (nonatomic, strong) UILabel *footer;
-
-@property (nonatomic, strong) UIButton *reloadButton;
-@property (nonatomic, strong) UIButton *websiteButton;
 @property (nonatomic) PrayerTimesGate *prayerTimesGate;
+@property (nonatomic) bool touchFlag;
+@property (nonatomic) UIColor* backColor;
+@property (nonatomic) UIColor* textColor;
 
+@property (nonatomic, strong) ReminderSettings *reminderSettings;
 
-- (void) loadPage;
+- (void)drawPrayerTimes;
 - (void) formatNextPrayer;
 @end

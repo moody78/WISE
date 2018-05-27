@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>PrayerTimesWidget.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>WISE.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1E66C15E19E12EE800368DD2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1E8B762119D8612A0008A4A9</key>
 		<dict>
 			<key>primary</key>

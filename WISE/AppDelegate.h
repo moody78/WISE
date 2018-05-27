@@ -7,19 +7,31 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
+#import "PrayerTimesGate.h"
+#import "Settings.h"
+#import "ActivitiesViewController.h"
+#import "TableViewController.h"
+#import "LogViewController.h"
+//#import "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreSpotlight.framework/Headers/CoreSpotlight.h"
+//#import "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/Headers/UTType.h"
+//#import "/Applications/Xcode-beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/MobileCoreServices.framework/Headers/UTCoreTypes.h"
+
+
+@class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, strong) ViewController *viewController;
+@property (nonatomic, strong) UINavigationController *navigationController;
+@property (nonatomic) PrayerTimesGate *prayerTimesGate;
+@property (nonatomic) ActivitiesViewController *activitiesViewController;
+@property (nonatomic) TableViewController *settingsViewController;
+@property (nonatomic) LogViewController *logViewController;
+@property (nonatomic) bool isAppResumingFromBackground;
+@property (nonatomic) bool didAppHaveBadgeIcon;
 
-- (void)saveContext;
-- (NSURL *)applicationDocumentsDirectory;
-
-
+-(void) downloadMissingPrayerTimes;
 @end
 

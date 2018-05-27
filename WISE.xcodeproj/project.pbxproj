@@ -7,17 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E4579D71D0494E8001FD789 /* Images-3.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4579D61D0494E8001FD789 /* Images-3.xcassets */; };
+		1E4579D91D049656001FD789 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4579D81D049656001FD789 /* Launch Screen.storyboard */; };
+		1E66C16219E12EE800368DD2 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E66C16119E12EE800368DD2 /* NotificationCenter.framework */; };
+		1E66C16819E12EE800368DD2 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E66C16719E12EE800368DD2 /* TodayViewController.m */; };
+		1E66C16A19E12EE800368DD2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E66C16919E12EE800368DD2 /* MainInterface.storyboard */; };
+		1E66C16D19E12EE800368DD2 /* PrayerTimesWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1E66C15F19E12EE800368DD2 /* PrayerTimesWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1E66C17619E140F700368DD2 /* PrayerTimesGate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E66C17519E140F700368DD2 /* PrayerTimesGate.m */; };
+		1E66C17719E140F700368DD2 /* PrayerTimesGate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E66C17519E140F700368DD2 /* PrayerTimesGate.m */; };
+		1E76B5891B2DBF66000ABF78 /* CoreSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E76B5881B2DBF66000ABF78 /* CoreSpotlight.framework */; };
+		1E76B58B1B2DC0E6000ABF78 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E76B58A1B2DC0E6000ABF78 /* MobileCoreServices.framework */; };
+		1E83D4F71AE0A3110056F8C0 /* Alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1E83D4F61AE0A3110056F8C0 /* Alarm.mp3 */; };
+		1E83D4F91AE106160056F8C0 /* GlassPing.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1E83D4F81AE106160056F8C0 /* GlassPing.mp3 */; };
+		1E83E3941B013F0200B59027 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E83E3931B013F0200B59027 /* Images-2.xcassets */; };
+		1E8B1FF11ADDB43500B7FB68 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B1FF01ADDB43500B7FB68 /* TableViewController.m */; };
+		1E8B1FF21ADDB43500B7FB68 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B1FF01ADDB43500B7FB68 /* TableViewController.m */; };
+		1E8B1FF51ADEF1C300B7FB68 /* ReminderSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B1FF41ADEF1C300B7FB68 /* ReminderSettings.m */; };
+		1E8B1FF61ADEF1C300B7FB68 /* ReminderSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B1FF41ADEF1C300B7FB68 /* ReminderSettings.m */; };
+		1E8B200A1AE0831800B7FB68 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B20091AE0831800B7FB68 /* Settings.m */; };
+		1E8B200B1AE0831800B7FB68 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B20091AE0831800B7FB68 /* Settings.m */; };
 		1E8B762819D8612A0008A4A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B762719D8612A0008A4A9 /* main.m */; };
 		1E8B762B19D8612A0008A4A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B762A19D8612A0008A4A9 /* AppDelegate.m */; };
 		1E8B762E19D8612A0008A4A9 /* WISE.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B762C19D8612A0008A4A9 /* WISE.xcdatamodeld */; };
 		1E8B763119D8612A0008A4A9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B763019D8612A0008A4A9 /* ViewController.m */; };
 		1E8B763419D8612A0008A4A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8B763219D8612A0008A4A9 /* Main.storyboard */; };
-		1E8B763619D8612A0008A4A9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E8B763519D8612A0008A4A9 /* Images.xcassets */; };
 		1E8B763919D8612A0008A4A9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E8B763719D8612A0008A4A9 /* LaunchScreen.xib */; };
 		1E8B764519D8612A0008A4A9 /* WISETests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8B764419D8612A0008A4A9 /* WISETests.m */; };
+		1E9CCEE81AF80E4A003FAE31 /* ActivitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9CCEE71AF80E4A003FAE31 /* ActivitiesViewController.m */; };
+		1E9CCEEC1AF82388003FAE31 /* overtime-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E9CCEE91AF82388003FAE31 /* overtime-25.png */; };
+		1E9CCEED1AF82388003FAE31 /* settings-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E9CCEEA1AF82388003FAE31 /* settings-25.png */; };
+		1E9CCEEE1AF82388003FAE31 /* home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E9CCEEB1AF82388003FAE31 /* home-25.png */; };
+		1EC8AE7F1B07B4BF001B35EE /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8AE7E1B07B4BF001B35EE /* LogViewController.m */; };
+		9F82E15420B7501000418D7B /* Athan30_echo_low.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9F82E15320B7501000418D7B /* Athan30_echo_low.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1E66C16B19E12EE800368DD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E8B761A19D8612A0008A4A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E66C15E19E12EE800368DD2;
+			remoteInfo = PrayerTimesWidget;
+		};
+		1E66C16E19E12EE800368DD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E8B761A19D8612A0008A4A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E66C15E19E12EE800368DD2;
+			remoteInfo = PrayerTimesWidget;
+		};
 		1E8B763F19D8612A0008A4A9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1E8B761A19D8612A0008A4A9 /* Project object */;
@@ -27,7 +65,44 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1E66C17319E12EE800368DD2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1E66C16D19E12EE800368DD2 /* PrayerTimesWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1E4579D61D0494E8001FD789 /* Images-3.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-3.xcassets"; sourceTree = "<group>"; };
+		1E4579D81D049656001FD789 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		1E66C15F19E12EE800368DD2 /* PrayerTimesWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PrayerTimesWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E66C16119E12EE800368DD2 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		1E66C16519E12EE800368DD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E66C16619E12EE800368DD2 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		1E66C16719E12EE800368DD2 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		1E66C16919E12EE800368DD2 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		1E66C17419E13FDD00368DD2 /* PrayerTimesGate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrayerTimesGate.h; sourceTree = "<group>"; };
+		1E66C17519E140F700368DD2 /* PrayerTimesGate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrayerTimesGate.m; sourceTree = "<group>"; };
+		1E73B7A01D03254C0068B5E9 /* PrayerTimesWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrayerTimesWidget.entitlements; sourceTree = "<group>"; };
+		1E73B7A11D0325D70068B5E9 /* WISE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WISE.entitlements; sourceTree = "<group>"; };
+		1E76B5881B2DBF66000ABF78 /* CoreSpotlight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreSpotlight.framework; path = System/Library/Frameworks/CoreSpotlight.framework; sourceTree = SDKROOT; };
+		1E76B58A1B2DC0E6000ABF78 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		1E83D4F61AE0A3110056F8C0 /* Alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Alarm.mp3; sourceTree = "<group>"; };
+		1E83D4F81AE106160056F8C0 /* GlassPing.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GlassPing.mp3; sourceTree = "<group>"; };
+		1E83E3931B013F0200B59027 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		1E8B1FEF1ADDB43500B7FB68 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewController.h; path = ../TableViewController.h; sourceTree = "<group>"; };
+		1E8B1FF01ADDB43500B7FB68 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewController.m; path = ../TableViewController.m; sourceTree = "<group>"; };
+		1E8B1FF31ADEF1C200B7FB68 /* ReminderSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderSettings.h; sourceTree = "<group>"; };
+		1E8B1FF41ADEF1C300B7FB68 /* ReminderSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderSettings.m; sourceTree = "<group>"; };
+		1E8B20081AE0831800B7FB68 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		1E8B20091AE0831800B7FB68 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		1E8B762219D8612A0008A4A9 /* WISE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WISE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E8B762619D8612A0008A4A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E8B762719D8612A0008A4A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -37,18 +112,35 @@
 		1E8B762F19D8612A0008A4A9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1E8B763019D8612A0008A4A9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1E8B763319D8612A0008A4A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1E8B763519D8612A0008A4A9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1E8B763819D8612A0008A4A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1E8B763E19D8612A0008A4A9 /* WISETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WISETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E8B764319D8612A0008A4A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E8B764419D8612A0008A4A9 /* WISETests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WISETests.m; sourceTree = "<group>"; };
+		1E9CCEE61AF80E4A003FAE31 /* ActivitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivitiesViewController.h; sourceTree = "<group>"; };
+		1E9CCEE71AF80E4A003FAE31 /* ActivitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivitiesViewController.m; sourceTree = "<group>"; };
+		1E9CCEE91AF82388003FAE31 /* overtime-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "overtime-25.png"; sourceTree = "<group>"; };
+		1E9CCEEA1AF82388003FAE31 /* settings-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-25.png"; sourceTree = "<group>"; };
+		1E9CCEEB1AF82388003FAE31 /* home-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home-25.png"; sourceTree = "<group>"; };
+		1EC8AE7D1B07B4BF001B35EE /* LogViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogViewController.h; sourceTree = "<group>"; };
+		1EC8AE7E1B07B4BF001B35EE /* LogViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
+		9F82E15320B7501000418D7B /* Athan30_echo_low.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Athan30_echo_low.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1E66C15C19E12EE800368DD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E66C16219E12EE800368DD2 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1E8B761F19D8612A0008A4A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E76B58B1B2DC0E6000ABF78 /* MobileCoreServices.framework in Frameworks */,
+				1E76B5891B2DBF66000ABF78 /* CoreSpotlight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,11 +154,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E66C16019E12EE800368DD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E76B58A1B2DC0E6000ABF78 /* MobileCoreServices.framework */,
+				1E76B5881B2DBF66000ABF78 /* CoreSpotlight.framework */,
+				1E66C16119E12EE800368DD2 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1E66C16319E12EE800368DD2 /* PrayerTimesWidget */ = {
+			isa = PBXGroup;
+			children = (
+				1E73B7A01D03254C0068B5E9 /* PrayerTimesWidget.entitlements */,
+				1E66C16619E12EE800368DD2 /* TodayViewController.h */,
+				1E66C16719E12EE800368DD2 /* TodayViewController.m */,
+				1E66C16919E12EE800368DD2 /* MainInterface.storyboard */,
+				1E66C16419E12EE800368DD2 /* Supporting Files */,
+			);
+			path = PrayerTimesWidget;
+			sourceTree = "<group>";
+		};
+		1E66C16419E12EE800368DD2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E66C16519E12EE800368DD2 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		1E8B761919D8612A0008A4A9 = {
 			isa = PBXGroup;
 			children = (
+				1E4579D81D049656001FD789 /* Launch Screen.storyboard */,
 				1E8B762419D8612A0008A4A9 /* WISE */,
 				1E8B764119D8612A0008A4A9 /* WISETests */,
+				1E66C16319E12EE800368DD2 /* PrayerTimesWidget */,
+				1E66C16019E12EE800368DD2 /* Frameworks */,
 				1E8B762319D8612A0008A4A9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,6 +201,7 @@
 			children = (
 				1E8B762219D8612A0008A4A9 /* WISE.app */,
 				1E8B763E19D8612A0008A4A9 /* WISETests.xctest */,
+				1E66C15F19E12EE800368DD2 /* PrayerTimesWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,15 +209,29 @@
 		1E8B762419D8612A0008A4A9 /* WISE */ = {
 			isa = PBXGroup;
 			children = (
+				1E73B7A11D0325D70068B5E9 /* WISE.entitlements */,
+				1E9CCEE61AF80E4A003FAE31 /* ActivitiesViewController.h */,
+				1E9CCEE71AF80E4A003FAE31 /* ActivitiesViewController.m */,
 				1E8B762919D8612A0008A4A9 /* AppDelegate.h */,
 				1E8B762A19D8612A0008A4A9 /* AppDelegate.m */,
+				1E83E3931B013F0200B59027 /* Images-2.xcassets */,
+				1E8B763719D8612A0008A4A9 /* LaunchScreen.xib */,
+				1EC8AE7D1B07B4BF001B35EE /* LogViewController.h */,
+				1EC8AE7E1B07B4BF001B35EE /* LogViewController.m */,
+				1E8B763219D8612A0008A4A9 /* Main.storyboard */,
+				1E66C17419E13FDD00368DD2 /* PrayerTimesGate.h */,
+				1E66C17519E140F700368DD2 /* PrayerTimesGate.m */,
+				1E8B1FF31ADEF1C200B7FB68 /* ReminderSettings.h */,
+				1E8B1FF41ADEF1C300B7FB68 /* ReminderSettings.m */,
+				1E8B20081AE0831800B7FB68 /* Settings.h */,
+				1E8B20091AE0831800B7FB68 /* Settings.m */,
+				1E8B762519D8612A0008A4A9 /* Supporting Files */,
+				1E8B1FEF1ADDB43500B7FB68 /* TableViewController.h */,
+				1E8B1FF01ADDB43500B7FB68 /* TableViewController.m */,
 				1E8B762F19D8612A0008A4A9 /* ViewController.h */,
 				1E8B763019D8612A0008A4A9 /* ViewController.m */,
-				1E8B763219D8612A0008A4A9 /* Main.storyboard */,
-				1E8B763519D8612A0008A4A9 /* Images.xcassets */,
-				1E8B763719D8612A0008A4A9 /* LaunchScreen.xib */,
 				1E8B762C19D8612A0008A4A9 /* WISE.xcdatamodeld */,
-				1E8B762519D8612A0008A4A9 /* Supporting Files */,
+				1E4579D61D0494E8001FD789 /* Images-3.xcassets */,
 			);
 			path = WISE;
 			sourceTree = "<group>";
@@ -99,6 +239,12 @@
 		1E8B762519D8612A0008A4A9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9F82E15320B7501000418D7B /* Athan30_echo_low.caf */,
+				1E9CCEE91AF82388003FAE31 /* overtime-25.png */,
+				1E9CCEEA1AF82388003FAE31 /* settings-25.png */,
+				1E9CCEEB1AF82388003FAE31 /* home-25.png */,
+				1E83D4F81AE106160056F8C0 /* GlassPing.mp3 */,
+				1E83D4F61AE0A3110056F8C0 /* Alarm.mp3 */,
 				1E8B762619D8612A0008A4A9 /* Info.plist */,
 				1E8B762719D8612A0008A4A9 /* main.m */,
 			);
@@ -125,6 +271,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1E66C15E19E12EE800368DD2 /* PrayerTimesWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E66C17219E12EE800368DD2 /* Build configuration list for PBXNativeTarget "PrayerTimesWidget" */;
+			buildPhases = (
+				1E66C15B19E12EE800368DD2 /* Sources */,
+				1E66C15C19E12EE800368DD2 /* Frameworks */,
+				1E66C15D19E12EE800368DD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PrayerTimesWidget;
+			productName = PrayerTimesWidget;
+			productReference = 1E66C15F19E12EE800368DD2 /* PrayerTimesWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		1E8B762119D8612A0008A4A9 /* WISE */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E8B764819D8612A0008A4A9 /* Build configuration list for PBXNativeTarget "WISE" */;
@@ -132,10 +295,13 @@
 				1E8B761E19D8612A0008A4A9 /* Sources */,
 				1E8B761F19D8612A0008A4A9 /* Frameworks */,
 				1E8B762019D8612A0008A4A9 /* Resources */,
+				1E66C17319E12EE800368DD2 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1E66C16C19E12EE800368DD2 /* PBXTargetDependency */,
+				1E66C16F19E12EE800368DD2 /* PBXTargetDependency */,
 			);
 			name = WISE;
 			productName = WISE;
@@ -169,8 +335,26 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = Beamstart;
 				TargetAttributes = {
+					1E66C15E19E12EE800368DD2 = {
+						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 4MMDN3G3FH;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					1E8B762119D8612A0008A4A9 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 4MMDN3G3FH;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					1E8B763D19D8612A0008A4A9 = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -193,18 +377,35 @@
 			targets = (
 				1E8B762119D8612A0008A4A9 /* WISE */,
 				1E8B763D19D8612A0008A4A9 /* WISETests */,
+				1E66C15E19E12EE800368DD2 /* PrayerTimesWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1E66C15D19E12EE800368DD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E66C16A19E12EE800368DD2 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1E8B762019D8612A0008A4A9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E83D4F71AE0A3110056F8C0 /* Alarm.mp3 in Resources */,
+				9F82E15420B7501000418D7B /* Athan30_echo_low.caf in Resources */,
 				1E8B763419D8612A0008A4A9 /* Main.storyboard in Resources */,
+				1E83E3941B013F0200B59027 /* Images-2.xcassets in Resources */,
 				1E8B763919D8612A0008A4A9 /* LaunchScreen.xib in Resources */,
-				1E8B763619D8612A0008A4A9 /* Images.xcassets in Resources */,
+				1E9CCEEE1AF82388003FAE31 /* home-25.png in Resources */,
+				1E4579D91D049656001FD789 /* Launch Screen.storyboard in Resources */,
+				1E9CCEED1AF82388003FAE31 /* settings-25.png in Resources */,
+				1E4579D71D0494E8001FD789 /* Images-3.xcassets in Resources */,
+				1E9CCEEC1AF82388003FAE31 /* overtime-25.png in Resources */,
+				1E83D4F91AE106160056F8C0 /* GlassPing.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,14 +419,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1E66C15B19E12EE800368DD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E66C17719E140F700368DD2 /* PrayerTimesGate.m in Sources */,
+				1E8B200B1AE0831800B7FB68 /* Settings.m in Sources */,
+				1E8B1FF61ADEF1C300B7FB68 /* ReminderSettings.m in Sources */,
+				1E66C16819E12EE800368DD2 /* TodayViewController.m in Sources */,
+				1E8B1FF21ADDB43500B7FB68 /* TableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1E8B761E19D8612A0008A4A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1E8B762E19D8612A0008A4A9 /* WISE.xcdatamodeld in Sources */,
+				1EC8AE7F1B07B4BF001B35EE /* LogViewController.m in Sources */,
+				1E8B200A1AE0831800B7FB68 /* Settings.m in Sources */,
 				1E8B762B19D8612A0008A4A9 /* AppDelegate.m in Sources */,
 				1E8B763119D8612A0008A4A9 /* ViewController.m in Sources */,
+				1E66C17619E140F700368DD2 /* PrayerTimesGate.m in Sources */,
 				1E8B762819D8612A0008A4A9 /* main.m in Sources */,
+				1E9CCEE81AF80E4A003FAE31 /* ActivitiesViewController.m in Sources */,
+				1E8B1FF51ADEF1C300B7FB68 /* ReminderSettings.m in Sources */,
+				1E8B1FF11ADDB43500B7FB68 /* TableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +459,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1E66C16C19E12EE800368DD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E66C15E19E12EE800368DD2 /* PrayerTimesWidget */;
+			targetProxy = 1E66C16B19E12EE800368DD2 /* PBXContainerItemProxy */;
+		};
+		1E66C16F19E12EE800368DD2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E66C15E19E12EE800368DD2 /* PrayerTimesWidget */;
+			targetProxy = 1E66C16E19E12EE800368DD2 /* PBXContainerItemProxy */;
+		};
 		1E8B764019D8612A0008A4A9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1E8B762119D8612A0008A4A9 /* WISE */;
@@ -267,6 +496,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1E66C17019E12EE800368DD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = PrayerTimesWidget/PrayerTimesWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PrayerTimesWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1E66C17119E12EE800368DD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = PrayerTimesWidget/PrayerTimesWidget.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = PrayerTimesWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		1E8B764619D8612A0008A4A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -326,6 +591,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Mohamed Rashwan (4MMDN3G3FH)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -349,7 +615,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WISE/WISE.entitlements;
 				INFOPLIST_FILE = WISE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -359,7 +627,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WISE/WISE.entitlements;
 				INFOPLIST_FILE = WISE/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -402,6 +672,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1E66C17219E12EE800368DD2 /* Build configuration list for PBXNativeTarget "PrayerTimesWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E66C17019E12EE800368DD2 /* Debug */,
+				1E66C17119E12EE800368DD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1E8B761D19D8612A0008A4A9 /* Build configuration list for PBXProject "WISE" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -418,6 +697,7 @@
 				1E8B764A19D8612A0008A4A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E8B764B19D8612A0008A4A9 /* Build configuration list for PBXNativeTarget "WISETests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +706,7 @@
 				1E8B764D19D8612A0008A4A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
