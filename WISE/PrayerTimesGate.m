@@ -204,7 +204,7 @@
 
 - (NSMutableArray*) getTodaysActivity:(BOOL*)paramFetchedNewActivities
 {
-    NSString *wiseUrlString = @"http://wise-web.org/activities/";//appindex.php";
+    NSString *wiseUrlString = @"https://wise-web.org/activities/";//appindex.php";
     NSURL *wiseURL = [NSURL URLWithString:wiseUrlString];
     NSError *error;
     NSString *content = [NSString stringWithContentsOfURL:wiseURL
@@ -578,7 +578,7 @@
 
 -(void) reloadPrayerTimes:(BOOL *)paramFetchedNewPrayerTimes{
     
-    NSString *wiseUrlString = @"http://www.wise-web.org";///appindex.php";
+    NSString *wiseUrlString = @"https://www.wise-web.org";///appindex.php";
     //NSString *wiseUrlString = @"http://www.google.com";
     [self loadUrl:wiseUrlString];
     NSURL *wiseURL = [NSURL URLWithString:wiseUrlString];
@@ -770,11 +770,14 @@
 
 -(NSString *) getIslamicDate:(NSString *)adjust longDate:(bool)longDate
 {
-    NSString * wdNames[] = {@"Ahad",@"Ithnin",@"Thulatha",@"Arbaa",@"Khams",@"Jumuah",@"Sabt"};
+    NSString * wdNames[] = {@"Ahad",@"Ithnin",@"Thulatha",@"Arbaa",@"Khamis",@"Jumuah",@"Sabt"};
     NSString * iMonthNames[] = {@"Muharram",@"Safar",@"Rabi'ul Awwal",@"Rabi'ul Akhir",
                                 @"Jumadal Ula",@"Jumadal Akhira",@"Rajab",@"Sha'ban",
                                 @"Ramadan",@"Shawwal",@"Dhul Qa'ada",@"Dhul Hijja"};
     
+    
+    if([adjust isEqualToString:@""])
+        adjust = @"0";
     
     NSInteger* iDate = [self kuwaitiCalendar:[adjust intValue]];
     

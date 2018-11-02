@@ -208,6 +208,10 @@
     [self.ishaAzan setTextColor:[UIColor whiteColor]];
     [self.ishaJamaa setTextColor:[UIColor whiteColor]];
     
+    NSString* ampm = @"pm";
+    if([prayerTimes.dhuhrAzan hasPrefix:@"11"])
+        ampm = @"am";
+    
     if([[prayerTimesGate getPrayerTimeAt:prayerTimes.fajrAzan ampm:@"am"] compare:[NSDate date]] == NSOrderedDescending)
     {
         [UIView animateWithDuration:0.5f animations:^{self.nextPrayerIndicator.center = CGPointMake(self.fajrTitle.frame.origin.x + 10, self.fajrTitle.frame.origin.y + 10);}];
@@ -224,7 +228,7 @@
         [self.sunriseAzan setTextColor:[UIColor yellowColor]];
         [self.sunriseJamaa setTextColor:[UIColor yellowColor]];
     }
-    else if([[prayerTimesGate getPrayerTimeAt:prayerTimes.dhuhrAzan ampm:@"pm"] compare:[NSDate date]] == NSOrderedDescending)
+    else if([[prayerTimesGate getPrayerTimeAt:prayerTimes.dhuhrAzan ampm:ampm] compare:[NSDate date]] == NSOrderedDescending)
     {
         [UIView animateWithDuration:0.5f animations:^{self.nextPrayerIndicator.center = CGPointMake(self.dhuhrTitle.frame.origin.x + 10, self.dhuhrTitle.frame.origin.y + 10);}];
         
