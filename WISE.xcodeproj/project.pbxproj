@@ -39,6 +39,8 @@
 		1E9CCEEE1AF82388003FAE31 /* home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E9CCEEB1AF82388003FAE31 /* home-25.png */; };
 		1EC8AE7F1B07B4BF001B35EE /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC8AE7E1B07B4BF001B35EE /* LogViewController.m */; };
 		9F82E15420B7501000418D7B /* Athan30_echo_low.caf in Resources */ = {isa = PBXBuildFile; fileRef = 9F82E15320B7501000418D7B /* Athan30_echo_low.caf */; };
+		9FC3EC4121B88FFF00B874DC /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E83E3931B013F0200B59027 /* Images-2.xcassets */; };
+		9FC3EC4221B8900400B874DC /* Images-3.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4579D61D0494E8001FD789 /* Images-3.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -387,6 +389,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FC3EC4121B88FFF00B874DC /* Images-2.xcassets in Resources */,
+				9FC3EC4221B8900400B874DC /* Images-3.xcassets in Resources */,
 				1E66C16A19E12EE800368DD2 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
