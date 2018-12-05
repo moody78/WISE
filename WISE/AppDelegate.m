@@ -61,7 +61,7 @@
     [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
     
     self.viewController = [[ViewController alloc] initWithNibName:nil bundle:nil];
-    self.activitiesViewController = [[ActivitiesViewController alloc] initWithStyle:UITableViewStylePlain];
+    //self.activitiesViewController = [[ActivitiesViewController alloc] initWithStyle:UITableViewStylePlain];
     self.settingsViewController = [[TableViewController alloc] initWithStyle:UITableViewStylePlain];
     self.logViewController = [[LogViewController alloc] initWithStyle:UITableViewStylePlain];
     
@@ -132,7 +132,7 @@
      deploy: Changes every time fixes or modifications are deployed to public
      build: Changes every time fixes or modifications are deployed for testing
      */
-    NSString *correctVersion = @"1.3.2 (1)";
+    NSString *correctVersion = @"1.3.4 (1)";
     
     if(existingVersion == nil || ![existingVersion isEqualToString:correctVersion])
     {
@@ -147,7 +147,7 @@
         
         [self refreshReminderNotifications];
         
-        UIAlertView *welcome = [[UIAlertView alloc] initWithTitle:@"Assalamu Alikum <1.3.2 (1)>" message:@"This version include bug fixes. More info in the app store." delegate:self cancelButtonTitle:@"JAK" otherButtonTitles:nil , nil];
+        UIAlertView *welcome = [[UIAlertView alloc] initWithTitle:@"Assalamu Alikum <1.3.4 (1)>" message:@"This version has bug fixes and temporary removal of the today's activity page" delegate:self cancelButtonTitle:@"JAK" otherButtonTitles:nil , nil];
         
         [welcome show];
     }

@@ -82,12 +82,15 @@
     
     if(touchFlag == true)
     {
+        [self drawPrayerTimes];
+        [self formatNextPrayer];
+        /*
         NSURL *url = [NSURL URLWithString:@"wiseprayer://"];
         [self.extensionContext openURL:url completionHandler:^(BOOL success) {
             NSLog(@"fun=%s after completion. success=%d", __func__, success);
         }];
         [self.extensionContext completeRequestReturningItems:self.extensionContext.inputItems completionHandler:nil];
-        
+        */
     }
 }
 

@@ -13,19 +13,13 @@
 #define WISE_PrayerTimesGate_h
 #endif
 
-@interface PrayerTimesGate : NSObject 
-
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator* persistentStoreCoordinator;
+@interface PrayerTimesGate : NSObject
 
 @property (strong, nonatomic) NSMutableData *responseData;
 
 @property (nonatomic) NSRange timeLocation;
 
 - (id)init;
-- (void)saveContext;
-- (NSURL *)applicationDocumentsDirectory;
 
 - (NSString*) getAzanTimeFromHTML:(NSString*)content;
 

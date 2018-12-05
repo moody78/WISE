@@ -23,85 +23,7 @@
     return self;
 }
 
-#pragma mark - Core Data stack
 
-@synthesize managedObjectContext = _managedObjectContext;
-@synthesize managedObjectModel = _managedObjectModel;
-@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
-
-- (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "com.Beamstart.WISE" in the application's documents directory.
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-}
-
-- (NSManagedObjectModel *)managedObjectModel {
-    // The managed object model for the application. It is a fatal error for the application not to be able to find and load its model.
-    if (_managedObjectModel != nil) {
-        return _managedObjectModel;
-    }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"WISE" withExtension:@"momd"];
-    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    return _managedObjectModel;
-}
-
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-    // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it.
-    if (_persistentStoreCoordinator != nil) {
-        return _persistentStoreCoordinator;
-    }
-    
-    // Create the coordinator and store
-    
-    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"WISE.sqlite"];
-    NSError *error = nil;
-    NSString *failureReason = @"There was an error creating or loading the application's saved data.";
-    if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {
-        // Report any error we got.
-        NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-        dict[NSLocalizedDescriptionKey] = @"Failed to initialize the application's saved data";
-        dict[NSLocalizedFailureReasonErrorKey] = failureReason;
-        dict[NSUnderlyingErrorKey] = error;
-        error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
-        // Replace this with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    
-    return _persistentStoreCoordinator;
-}
-
-
-- (NSManagedObjectContext *)managedObjectContext {
-    // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
-    if (_managedObjectContext != nil) {
-        return _managedObjectContext;
-    }
-    
-    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-    if (!coordinator) {
-        return nil;
-    }
-    _managedObjectContext = [[NSManagedObjectContext alloc] init];
-    [_managedObjectContext setPersistentStoreCoordinator:coordinator];
-    return _managedObjectContext;
-}
-
-#pragma mark - Core Data Saving support
-
-- (void)saveContext {
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
-    if (managedObjectContext != nil) {
-        NSError *error = nil;
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-            // Replace this implementation with code to handle the error appropriately.
-            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }
-}
 
 - (NSDate *) getPrayerTimeAt:(NSString*)azanTime ampm:(NSString*)ampm
 {
@@ -118,40 +40,6 @@
     
     return formatterDate;
 }
-
-/*
- original code for parsing appindex.php
- 
-- (NSString*) getAzanTimeForPrayer:(NSString*)prayer fromHTML:(NSString*)content
-{
-    NSString *delimiter = @"<td class='pttimes'>";
-    
-    NSRange range1 = [content rangeOfString:[NSString stringWithFormat:@">%@<",prayer]];
-    range1.length=100;
-    range1 = [content rangeOfString:delimiter options:0 range:range1];
-    range1.length=100;
-    NSRange range2 = [content rangeOfString:@"</td" options:0 range:range1];
-    timeLocation.location = range1.location + delimiter.length;
-    timeLocation.length = range2.location - range1.location - delimiter.length;
-    
-    return [content substringWithRange:timeLocation];
-}
-
-- (NSString*) getJamaaTimeFromHTML:(NSString*)content
-{
-    NSString *delimiter = @"<td class='pttimes'>";
-    
-    NSRange range1 = timeLocation;
-    range1.length=100;
-    range1 = [content rangeOfString:delimiter options:0 range:range1];
-    range1.length=100;
-    NSRange range2 = [content rangeOfString:@"</td" options:0 range:range1];
-    timeLocation.location = range1.location + delimiter.length;
-    timeLocation.length = range2.location - range1.location - delimiter.length;
-    
-    return [content substringWithRange:timeLocation];
-}
-*/
 
 - (NSString *) getHijriAdjustmentFromHTML:(NSString*)content
 {
@@ -217,7 +105,7 @@
     NSString *searchStart = @"<tr><td>";
     //NSString *searchStartWithNoSpace = @"<tr><td align='left'><b>";
     
-    NSRange rangeSearch = [content rangeOfString:@"<tr><td><b>Activity</b></td><td><b>For</td><td><b>Time</td><td><b>Venue</b></td></tr>"];
+    NSRange rangeSearch = [content rangeOfString:@"<td><b>Activity</b></td>"];
     rangeSearch.location = rangeSearch.location + 10;
     rangeSearch.length = content.length - rangeSearch.location;
     
@@ -340,58 +228,18 @@
     newPrayerTimes.bgFetchData = paramBgFetchData;
     
     NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.beamstart.wise.SharingDefaults"];
-    NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:newPrayerTimes];
-    [defaults setObject:encodedObject forKey:@"prayerTimes"];
+    NSData *encodedObject;
+    //NSData *encodedObject = [NSKeyedArchiver archivedDataWithRootObject:newPrayerTimes];
+    if (@available(iOS 11.0, *)) {
+        encodedObject = [NSKeyedArchiver archivedDataWithRootObject:newPrayerTimes requiringSecureCoding:false error:nil];
+        [defaults setObject:encodedObject forKey:@"prayerTimes"];
+    } else {
+        // Fallback on earlier versions
+        encodedObject = [NSKeyedArchiver archivedDataWithRootObject:newPrayerTimes];
+    }
     
     return YES;
     }
-/*
- - (BOOL) createNewPrayerTimesWithFajrAzan:(NSString *)paramFajrAzan
-                                FajrJamaa:(NSString *)paramFajrJamaa
-                             SunrsiseAzan:(NSString *)paramSunriseAzan
-                                DhuhrAzan:(NSString *)paramDhuhrAzan
-                               DhuhrJamaa:(NSString *)paramDhuhrJamaa
-                                  AsrAzan:(NSString *)paramAsrAzan
-                                 AsrJamaa:(NSString *)paramAsrJamaa
-                              MaghribAzan:(NSString *)paramMaghribAzan
-                             MaghribJamaa:(NSString *)paramMaghribJamaa
-                                 IshaAzan:(NSString *)paramIshaAzan
-                                IshaJamaa:(NSString *)paramIshaJamaa
-                               ModifiedOn:(NSDate *)paramModifiedOn{
-    BOOL result = NO;
-    
-    PrayerTimes *newPrayerTimes = [NSEntityDescription
-                                   insertNewObjectForEntityForName:@"PrayerTimes" inManagedObjectContext:self.managedObjectContext];
-    if(newPrayerTimes == nil){
-        NSLog(@"Failed to create the new prayer times record");
-        return NO;
-    }
-    
-    newPrayerTimes.fajrAzan = paramFajrAzan;
-    newPrayerTimes.fajrJamaa = paramFajrJamaa;
-    newPrayerTimes.sunriseAzan = paramSunriseAzan;
-    newPrayerTimes.dhuhrAzan = paramDhuhrAzan;
-    newPrayerTimes.dhuhrJamaa = paramDhuhrJamaa;
-    newPrayerTimes.asrAzan = paramAsrAzan;
-    newPrayerTimes.asrJamaa = paramAsrJamaa;
-    newPrayerTimes.maghribAzan = paramMaghribAzan;
-    newPrayerTimes.maghribJamaa = paramMaghribJamaa;
-    newPrayerTimes.ishaAzan = paramIshaAzan;
-    newPrayerTimes.ishaJamaa = paramIshaJamaa;
-    newPrayerTimes.modifiedOn = paramModifiedOn;
-    
-    NSError *savingError = nil;
-    
-    if([self.managedObjectContext save:&savingError]){
-        return YES;
-    }
-    else{
-        NSLog(@"Failed to save the new prayer times record. Error = %@", savingError);
-    }
-    
-    return result;
-}
-*/
 
 - (BOOL) createNewSettingsWithFajrReminder:(bool)paramFajrReminder
                              DhuhrReminder:(bool)paramDhuhrReminder
@@ -417,40 +265,7 @@
     
     return YES;
 }
-/*
-- (BOOL) createNewSettingsWithFajrReminder:(bool)paramFajrReminder
-                                DhuhrReminder:(bool)paramDhuhrReminder
-                                AsrReminder:(bool)paramAsrReminder
-                                 MaghribReminder:(bool)paramMaghribReminder
-                              IshaReminder:(bool)paramIshaReminder{
-    BOOL result = NO;
-    
-    Settings *newSettings =nil;
-    newSettings = [NSEntityDescription
-                                   insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:self.managedObjectContext];
-    if(newSettings == nil){
-        NSLog(@"Failed to create the new settings record");
-        return NO;
-    }
-    
-    newSettings.fajrReminder = [NSNumber numberWithBool:paramFajrReminder];
-    newSettings.dhuhrReminder = [NSNumber numberWithBool:paramDhuhrReminder];
-    newSettings.asrReminder = [NSNumber numberWithBool:paramAsrReminder];
-    newSettings.maghribReminder = [NSNumber numberWithBool:paramMaghribReminder];
-    newSettings.ishaReminder = [NSNumber numberWithBool:paramIshaReminder];
-    
-    NSError *savingError = nil;
-    
-    if([self.managedObjectContext save:&savingError]){
-        return YES;
-    }
-    else{
-        NSLog(@"Failed to save the new settings record. Error = %@", savingError);
-    }
-    
-    return result;
-}
-*/
+
 
 - (PrayerTimes *) getCurrentPrayerTimesRecord{
     NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.beamstart.wise.SharingDefaults"];
@@ -466,22 +281,6 @@
         return nil;
 }
 
-/*
-
-- (PrayerTimes *) getCurrentPrayerTimesRecord{
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]initWithEntityName:@"PrayerTimes"];
-    
-    NSError *requestError = nil;
-    
-    NSArray *prayerTimesRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:&requestError];
-    
-    if([prayerTimesRecords count] > 0)
-        return prayerTimesRecords[0];
-    else
-        return nil;
-}
-*/
-
 - (Settings *) getCurrentPrayerSettingsRecord{
     NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.beamstart.wise.SharingDefaults"];
     
@@ -495,20 +294,6 @@
         return nil;
 }
 
-/*
-- (Settings *) getCurrentPrayerSettingsRecord{
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc]initWithEntityName:@"Settings"];
-    
-    NSError *requestError = nil;
-    
-    NSArray *settingsRecords = [self.managedObjectContext executeFetchRequest:fetchRequest error:&requestError];
-   
-    if([settingsRecords count] > 0)
-        return settingsRecords[0];
-    else
-        return nil;
-}
-*/
 
 -(void) reloadSettingsWithFajrReminder:(bool)paramFajrReminder
                          DhuhrReminder:(bool)paramDhuhrReminder
@@ -527,25 +312,6 @@
                                   PlayAdhan:paramPlayAdhan];
     
 }
-
-/*
--(void) reloadSettingsWithFajrReminder:(bool)paramFajrReminder
-                         DhuhrReminder:(bool)paramDhuhrReminder
-                           AsrReminder:(bool)paramAsrReminder
-                       MaghribReminder:(bool)paramMaghribReminder
-                          IshaReminder:(bool)paramIshaReminder
-{
-    Settings *existingSettings = [self getCurrentPrayerSettingsRecord];
-    
-    if(existingSettings != nil)
-    {
-        [self.managedObjectContext deleteObject:existingSettings];
-    }
-    
-    [self createNewSettingsWithFajrReminder:paramFajrReminder DhuhrReminder:paramDhuhrReminder AsrReminder:paramAsrReminder MaghribReminder:paramMaghribReminder IshaReminder:paramIshaReminder];
-    
-}
-*/
 
 @synthesize responseData;
 
@@ -583,7 +349,6 @@
     [self loadUrl:wiseUrlString];
     NSURL *wiseURL = [NSURL URLWithString:wiseUrlString];
     NSError *error;
-    NSStringEncoding encoding;
     NSString *wisePage = [NSString stringWithContentsOfURL:wiseURL
                                                   encoding:NSASCIIStringEncoding
                                                      error:&error];
@@ -638,33 +403,6 @@
     
     if([fajrAzan length] != 0)
     {
-        /*
-         PrayerTimes *existingPrayerTimes = [self getCurrentPrayerTimesRecord];
-        
-        if(existingPrayerTimes != nil){
-            *
-             existingPrayerTimes.fajrAzan = fajrAzan;
-             existingPrayerTimes.fajrJamaa = fajrAzan;
-             existingPrayerTimes.sunriseAzan = sunrise;
-             existingPrayerTimes.dhuhrAzan = dhuhrAzan;
-             existingPrayerTimes.dhuhrJamaa = dhuhrJamaa;
-             existingPrayerTimes.asrAzan = asrAzan;
-             existingPrayerTimes.asrJamaa = asrJamaa;
-             existingPrayerTimes.maghribAzan = maghribAzan;
-             existingPrayerTimes.maghribJamaa = maghribJamaa;
-             existingPrayerTimes.ishaAzan = ishaAzan;
-             existingPrayerTimes.ishaJamaa = ishaJamaa;
-             existingPrayerTimes.modifiedOn = [NSDate date];
-             
-             NSError *savingError = nil;
-             
-             if(![self.managedObjectContext save:&savingError]){
-             NSLog(@"Failed to update existing prayer times record.");
-             }
-             *
-            
-            [self.managedObjectContext deleteObject:existingPrayerTimes];
-        }*/
         
         [self createNewPrayerTimesWithAdjustment: adjustment FajrAzan:fajrAzan FajrJamaa:fajrJamaa SunrsiseAzan:sunrise DhuhrAzan:dhuhrAzan DhuhrJamaa:dhuhrJamaa AsrAzan:asrAzan AsrJamaa:asrJamaa MaghribAzan:maghribAzan MaghribJamaa:maghribJamaa IshaAzan:ishaAzan IshaJamaa:ishaJamaa ModifiedOn:[NSDate date] BgFetchData:bgFetchData];
         
@@ -741,7 +479,7 @@
     
     double iyear = 10631./30.;
     NSInteger epochastro = 1948084;
-    NSInteger epochcivil = 1948085;
+    //NSInteger epochcivil = 1948085;
     
     double shift1 = 8.01 / 60.;
     
