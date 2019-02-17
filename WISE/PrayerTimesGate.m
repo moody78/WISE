@@ -92,6 +92,7 @@
 
 - (NSMutableArray*) getTodaysActivity:(BOOL*)paramFetchedNewActivities
 {
+    return nil;
     NSString *wiseUrlString = @"https://wise-web.org/activities/";//appindex.php";
     NSURL *wiseURL = [NSURL URLWithString:wiseUrlString];
     NSError *error;
@@ -344,8 +345,9 @@
 
 -(void) reloadPrayerTimes:(BOOL *)paramFetchedNewPrayerTimes{
     
-    NSString *wiseUrlString = @"https://www.wise-web.org";///appindex.php";
+    //NSString *wiseUrlString = @"https://www.wise-web.org";///appindex.php";
     //NSString *wiseUrlString = @"http://www.google.com";
+    NSString *wiseUrlString = @"https://prayertimes-functions.azurewebsites.net/api/PrayerTimesTranslator?code=88qupa6LqnWajbvtbNx8P9ssOo2SnFaInK39aP9gv0OQKIKQCH1h4g==&name=wise";
     [self loadUrl:wiseUrlString];
     NSURL *wiseURL = [NSURL URLWithString:wiseUrlString];
     NSError *error;
@@ -379,27 +381,45 @@
     if(paramFetchedNewPrayerTimes != nil)
         bgFetchData = wisePage;
     
-    timeLocation.location = 0;
-    adjustment = [self getHijriAdjustmentFromHTML:wisePage];
+    NSLog(@"content = %@",wisePage);
+    
+    // Remove first and last characters which are double quotations
+    wisePage = [wisePage substringWithRange:NSMakeRange(1, [wisePage length]-2)];
+    
+    // Remove \r\n
+    wisePage = [wisePage stringByReplacingOccurrencesOfString:@"\\r\\n" withString:@""];
+    
+    // Replace \" with "
+    wisePage = [wisePage stringByReplacingOccurrencesOfString:@"\\\"" withString:@"\""];
+    
+    NSLog(@"content without newline = %@",wisePage);
+    
+    NSData *data = [wisePage dataUsingEncoding:NSUTF8StringEncoding];
+    
+    
+    NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     
     timeLocation.location = 0;
+    adjustment = [parsedObject objectForKey:@"adjustment"];// [self getHijriAdjustmentFromHTML:wisePage];
     
-    fajrAzan = [self getAzanTimeFromHTML:wisePage];
-    fajrJamaa = [self getJamaaTimeFromHTML:wisePage];
+    timeLocation.location = 0;
     
-    sunrise = [self getAzanTimeFromHTML:wisePage];
+    fajrAzan = [parsedObject objectForKey:@"FajrAzan"];// [self getAzanTimeFromHTML:wisePage];
+    fajrJamaa = [parsedObject objectForKey:@"FajrJamaah"];// [self getJamaaTimeFromHTML:wisePage];
     
-    dhuhrAzan = [self getAzanTimeFromHTML:wisePage];
-    dhuhrJamaa = [self getJamaaTimeFromHTML:wisePage];
+    sunrise = [parsedObject objectForKey:@"Sunrise"];// [self getAzanTimeFromHTML:wisePage];
     
-    asrAzan = [self getAzanTimeFromHTML:wisePage];
-    asrJamaa = [self getJamaaTimeFromHTML:wisePage];
+    dhuhrAzan = [parsedObject objectForKey:@"DhuhrAzan"];// [self getAzanTimeFromHTML:wisePage];
+    dhuhrJamaa = [parsedObject objectForKey:@"DhuhrJamaah"];// [self getJamaaTimeFromHTML:wisePage];
     
-    maghribAzan = [self getAzanTimeFromHTML:wisePage];
-    maghribJamaa = [self getJamaaTimeFromHTML:wisePage];
+    asrAzan = [parsedObject objectForKey:@"AsrAzan"];// [self getAzanTimeFromHTML:wisePage];
+    asrJamaa = [parsedObject objectForKey:@"AsrJamaah"];// [self getJamaaTimeFromHTML:wisePage];
     
-    ishaAzan = [self getAzanTimeFromHTML:wisePage];
-    ishaJamaa = [self getJamaaTimeFromHTML:wisePage];
+    maghribAzan = [parsedObject objectForKey:@"MaghribAzan"];// [self getAzanTimeFromHTML:wisePage];
+    maghribJamaa = [parsedObject objectForKey:@"MaghribJamaah"];// [self getJamaaTimeFromHTML:wisePage];
+    
+    ishaAzan = [parsedObject objectForKey:@"IshaAzan"];// [self getAzanTimeFromHTML:wisePage];
+    ishaJamaa = [parsedObject objectForKey:@"IshaJamaah"];// [self getJamaaTimeFromHTML:wisePage];
     
     if([fajrAzan length] != 0)
     {

@@ -82,13 +82,16 @@
     
     UINavigationController *prayersNavigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     //self.activitiesViewController = [[ActivitiesViewController alloc] initWithNibName:nil bundle:NULL];
-    UINavigationController *activitiesNavigationController = [[UINavigationController alloc] initWithRootViewController:self.activitiesViewController];
+    //UINavigationController *activitiesNavigationController = [[UINavigationController alloc] initWithRootViewController:self.activitiesViewController];
     UINavigationController *settingsNavigationController = [[UINavigationController alloc] initWithRootViewController:self.settingsViewController];
     UINavigationController *logNavigationController = [[UINavigationController alloc] initWithRootViewController:self.logViewController];
     
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     [tabBarController setViewControllers:
-      @[prayersNavigationController, activitiesNavigationController, settingsNavigationController]];//, logNavigationController]];
+      @[prayersNavigationController, settingsNavigationController]];//, logNavigationController]];
+    
+    //[tabBarController setViewControllers:
+    // @[prayersNavigationController, activitiesNavigationController, settingsNavigationController]];//, logNavigationController]];
     
     self.settingsViewController.reminderSettings =[[ReminderSettings alloc] init];
     [self.settingsViewController.reminderSettings addObserver:self forKeyPath:@"fajrReminder" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
@@ -132,7 +135,7 @@
      deploy: Changes every time fixes or modifications are deployed to public
      build: Changes every time fixes or modifications are deployed for testing
      */
-    NSString *correctVersion = @"1.3.4 (2)";
+    NSString *correctVersion = @"1.4.1 (1)";
     
     if(existingVersion == nil || ![existingVersion isEqualToString:correctVersion])
     {
@@ -147,9 +150,9 @@
         
         [self refreshReminderNotifications];
         
-        UIAlertView *welcome = [[UIAlertView alloc] initWithTitle:@"Assalamu Alikum <1.3.4 (2)>" message:@"This version has bug fixes and temporary removal of the today's activity page" delegate:self cancelButtonTitle:@"JAK" otherButtonTitles:nil , nil];
+        UIAlertView *welcome = [[UIAlertView alloc] initWithTitle:@"Assalamu Alikum <1.4.1 (1)>" message:@"." delegate:self cancelButtonTitle:@"JAK" otherButtonTitles:nil , nil];
         
-        [welcome show];
+        //[welcome show];
     }
     
     [self.logViewController addLog:[NSString stringWithFormat:@"Coming from: %@", existingVersion]];
@@ -184,13 +187,13 @@
     BOOL haveNewActivites = NO;
     
     [self fetchNewPrayerTimes:&haveNewPrayerContent];
-    [self.activitiesViewController performRefreshData:&haveNewActivites];
+    //[self.activitiesViewController performRefreshData:&haveNewActivites];
     
     if(haveNewPrayerContent)
         [self.viewController loadPage];
     
-    if(haveNewActivites)
-        [self.activitiesViewController refreshData:nil];
+    //if(haveNewActivites)
+        //[self.activitiesViewController refreshData:nil];
     
     if (haveNewPrayerContent || haveNewActivites)
     {
