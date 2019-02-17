@@ -383,17 +383,6 @@
     
     NSLog(@"content = %@",wisePage);
     
-    // Remove first and last characters which are double quotations
-    wisePage = [wisePage substringWithRange:NSMakeRange(1, [wisePage length]-2)];
-    
-    // Remove \r\n
-    wisePage = [wisePage stringByReplacingOccurrencesOfString:@"\\r\\n" withString:@""];
-    
-    // Replace \" with "
-    wisePage = [wisePage stringByReplacingOccurrencesOfString:@"\\\"" withString:@"\""];
-    
-    NSLog(@"content without newline = %@",wisePage);
-    
     NSData *data = [wisePage dataUsingEncoding:NSUTF8StringEncoding];
     
     
