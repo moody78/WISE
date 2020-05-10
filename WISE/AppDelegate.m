@@ -135,7 +135,7 @@
      deploy: Changes every time fixes or modifications are deployed to public
      build: Changes every time fixes or modifications are deployed for testing
      */
-    NSString *correctVersion = @"1.4.1 (2)";
+    NSString *correctVersion = @"1.4.2 (2)";
     
     if(existingVersion == nil || ![existingVersion isEqualToString:correctVersion])
     {
@@ -150,7 +150,7 @@
         
         [self refreshReminderNotifications];
         
-        UIAlertView *welcome = [[UIAlertView alloc] initWithTitle:@"Assalamu Alikum <1.4.1 (2)>" message:@"." delegate:self cancelButtonTitle:@"JAK" otherButtonTitles:nil , nil];
+        UIAlertView *welcome = [[UIAlertView alloc] initWithTitle:@"Assalamu Alikum <1.4.2 (2)>" message:@"." delegate:self cancelButtonTitle:@"JAK" otherButtonTitles:nil , nil];
         
         //[welcome show];
     }

@@ -389,7 +389,7 @@
     NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     
     timeLocation.location = 0;
-    adjustment = [parsedObject objectForKey:@"adjustment"];// [self getHijriAdjustmentFromHTML:wisePage];
+    adjustment = [parsedObject objectForKey:@"Adjustment"];// [self getHijriAdjustmentFromHTML:wisePage];
     
     timeLocation.location = 0;
     
